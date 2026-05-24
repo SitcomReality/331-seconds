@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>331 Seconds</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/hex-grid.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Birth Selection Screen -->
+    <div id="birth-selection" class="screen active">
+      <div class="title">The Waiting Room</div>
+      <div id="births-list"></div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <div class="game-container">
+        <!-- Stats Bar -->
+        <div id="stats-bar">
+          <div class="stat">
+            <span class="stat-label">Vitality</span>
+            <span id="vitality-value" class="stat-value">100</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Capital</span>
+            <span id="capital-value" class="stat-value">50</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Fulfillment</span>
+            <span id="fulfillment-value" class="stat-value">50</span>
+          </div>
+          <div class="stat seconds-remaining">
+            <span class="stat-label">Seconds</span>
+            <span id="seconds-value" class="stat-value">331</span>
+          </div>
+        </div>
+
+        <!-- Hex Grid -->
+        <div id="hex-grid-container">
+          <canvas id="hex-canvas"></canvas>
+        </div>
+
+        <!-- Hand of Cards -->
+        <div id="hand-container">
+          <div id="hand"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Screen -->
+    <div id="end-screen" class="screen">
+      <div class="end-container">
+        <div class="end-title">Life Complete</div>
+        <div id="end-stats"></div>
+        <div id="legacy-score"></div>
+        <button id="return-to-lobby">Return to Waiting Room</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
