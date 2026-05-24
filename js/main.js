@@ -25,9 +25,12 @@ class Game {
   
   startLife(birthData) {
     this.state.initializeFromBirth(birthData);
-    this.hexGrid.initialize();
     this.ui.showGameScreen();
-    this.ui.update();
+    // Initialize hex grid after screen is visible so canvas can size properly
+    setTimeout(() => {
+      this.hexGrid.initialize();
+      this.ui.update();
+    }, 0);
   }
 }
 
