@@ -5,7 +5,7 @@ export class HexGrid {
   constructor() {
     this.canvas = document.getElementById('hex-canvas');
     this.ctx = this.canvas.getContext('2d');
-    this.hexSize = 20;
+    this.hexSize = 30;
     this.cells = [];
     this.selectedCell = null;
     this.hoveredCell = null;
@@ -111,17 +111,17 @@ export class HexGrid {
     if (cell.filled) {
       this.ctx.fillStyle = this.getCardColor(cell.card);
     } else if (cell === this.hoveredCell) {
-      this.ctx.fillStyle = 'rgba(255, 215, 0, 0.2)';
+      this.ctx.fillStyle = 'rgba(255, 215, 0, 0.3)';
     } else {
-      this.ctx.fillStyle = 'rgba(245, 245, 220, 0.1)';
+      this.ctx.fillStyle = 'rgba(245, 245, 220, 0.15)';
     }
     this.ctx.fill();
     
     // Stroke
     this.ctx.strokeStyle = cell === this.hoveredCell ? 
-      'rgba(255, 215, 0, 0.8)' : 
-      'rgba(212, 184, 150, 0.3)';
-    this.ctx.lineWidth = cell === this.hoveredCell ? 2 : 1;
+      'rgba(255, 215, 0, 1)' : 
+      'rgba(212, 184, 150, 0.5)';
+    this.ctx.lineWidth = cell === this.hoveredCell ? 3 : 1.5;
     this.ctx.stroke();
   }
   

@@ -84,14 +84,16 @@ export class UIManager {
   handleCellSelection(cell) {
     if (this.selectedCardIndex === null) return;
     
+    // Save the card before playing it (as playCard removes it from hand)
+    const card = this.gameState.hand[this.selectedCardIndex];
+    
     const success = this.gameState.playCard(
       this.selectedCardIndex, 
       { q: cell.q, r: cell.r }
     );
     
     if (success) {
-      this.hexGrid.fillCell(cell.q, cell.r, 
-        this.gameState.hand[this.selectedCardIndex]);
+      this.hexGrid.fillCell(cell.q, cell.r, card);
       this.selectedCardIndex = null;
       this.update();
     }
